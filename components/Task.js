@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import {StyleSheet, View, Text, Switch} from "react-native";
 
-export default function Task({name, description, status, date}) {
+export default function Task({id, name, description, status, date}) {
 
     const [isDone, setIsDone] = useState(false);
 
     function checkTask () {
-        setIsDone(!isDone);      
+        setIsDone(!isDone);  
+        console.log(id);    
+        // mandar de novo pro local storage com o status trocado para recuperar no last activity
+        // la dar um map procurando quais tem esse id
     }
 
     return(

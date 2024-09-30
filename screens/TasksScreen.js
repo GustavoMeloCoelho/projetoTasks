@@ -6,11 +6,13 @@ import { getData, storeData } from '../services/storage';
 
 
 
+
 export default function TasksScreen() {
     
     const [inputValue, setInputValue] = useState("");
     const [modalVisible, setModalVisible] = useState(false);
     const [search, setSearch] = useState("");
+
 
     const [tasks, setTasks] = useState([]);
     const [originalTasks, setOriginalTasks] = useState([
@@ -58,7 +60,6 @@ export default function TasksScreen() {
         //     date: "18 set 2024"
         // }
     ]);
-
 
 
     useEffect(() => {
@@ -112,6 +113,7 @@ export default function TasksScreen() {
                         return (
                             <Task
                                 key={task.id}
+                                id={task.id}
                                 name={task.name}
                                 description={task.description}
                                 status={task.status}
